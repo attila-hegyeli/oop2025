@@ -39,6 +39,7 @@ public class Main {
 // Convert String → int: Integer.parseInt( String)
                 int birthYear = Integer.parseInt(items[2].trim());
                 persons.add(new Person(firstName, lastName, birthYear));
+
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
