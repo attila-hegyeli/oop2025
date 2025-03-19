@@ -33,10 +33,8 @@ public class Main {
                     continue;
                 }
                 String[] items = line.split(",");
-// trim: eliminates leading and trailing spaces
                 String firstName = items[0].trim();
                 String lastName = items[1].trim();
-// Convert String → int: Integer.parseInt( String)
                 int birthYear = Integer.parseInt(items[2].trim());
                 persons.add(new Person(firstName, lastName, birthYear));
 
