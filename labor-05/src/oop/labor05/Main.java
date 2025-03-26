@@ -9,19 +9,25 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
+    /// Main
     public static void main(String[] args) {
+        /// egy objektum letrehozasa egy csv fajlnak
         ArrayList<Course> courses = readCourses("courses.csv");
+        ///kiiratom a fajl tartalmat
         for (Course c : courses)
         {
             System.out.println(c);
         }
         System.out.println("\n");
+        ///egy objektum a diakoknak a csv fajlbol
         ArrayList<Student> students = readStudent("students.csv");
+        ///kiiratom a diakokat
         for (Student s : students)
         {
             System.out.println(s);
         }
     }
+    /// egy ArrayList ami fajl nevet kap
     private static ArrayList<Course> readCourses(String filename)
     {
         /// objektum
@@ -45,6 +51,7 @@ public class Main {
 
         }
         catch (FileNotFoundException e) {
+            ///ha a fajl nem nyitodna meg
             e.printStackTrace();
         }
         /// visszateriti a sort
