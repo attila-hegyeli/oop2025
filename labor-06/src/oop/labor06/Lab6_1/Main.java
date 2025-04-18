@@ -15,6 +15,6 @@ public class Main {
         account1.deposit(1000);
         System.out.println(customer1);
         Bank bank = new Bank("OTP");
-        bank.add
+
     }
 }
