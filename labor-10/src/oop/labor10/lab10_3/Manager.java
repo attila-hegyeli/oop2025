@@ -5,8 +5,8 @@ import oop.labor10.lab10_2.MyDate;
 public class Manager extends Employee{
     private String department;
 
-    public Manager(int ID, String firstName, String lastName, double salary, MyDate birthDate, String department) {
-        super(ID, firstName, lastName, salary, birthDate);
+    public Manager(String firstName, String lastName, double salary, MyDate birthDate, String department) {
+        super(firstName,lastName,salary,birthDate);
         this.department = department;
     }
 

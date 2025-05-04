@@ -4,7 +4,9 @@ import oop.labor10.lab10_2.MyDate;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class Company {
@@ -62,7 +64,9 @@ public class Company {
                 }
                 if (array.length == 7)
                 {
-
+                    String department = array[6].trim();
+                    Employee manager = new Manager(firstName,lastName,salary,birthdate,department);
+                    employees.add(manager);
                 }
                 if (array.length > 8)
                 {
@@ -76,4 +80,37 @@ public class Company {
             e.printStackTrace();
         }
     }
+    public void fire(int ID)
+    {
+        for (Employee employee : employees)
+        {
+            if (employee.getID() == ID)
+            {
+                employees.remove(employee);
+                break;
+            }
+        }
+    }
+    public void printAll(PrintStream desk)
+    {
+        for (Employee employee : employees)
+        {
+            desk.println(employee);
+        }
+    }
+    public void printManagers(PrintStream desk)
+    {
+        for (Employee employee: employees)
+        {
+            if(employee instanceof Manager)
+            {
+                desk.println(employee);
+            }
+        }
+    }
+    public void sortByComparator(Comparator<Employee> comp )
+    {
+        employees.sort(comp);
+    }
+
 }
