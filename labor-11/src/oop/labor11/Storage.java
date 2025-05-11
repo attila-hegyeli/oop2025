@@ -4,6 +4,7 @@ package oop.labor11;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Storage {
@@ -23,6 +24,7 @@ public class Storage {
                 int price = Integer.parseInt(data[3].trim());
                 products.add(new Product(id, name, amount, price));
             }
+            Collections.sort(products);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -38,6 +40,7 @@ public class Storage {
                 String[] updateData = line.split(" ");
                 int id = Integer.parseInt(updateData[0].trim());
                 int newAmount = Integer.parseInt(updateData[1].trim());
+
                 int index = binarySearch(products,0,products.size()-1,id);
                 if(index != -1) {
                     products.get(index).increaseAmount(newAmount);
